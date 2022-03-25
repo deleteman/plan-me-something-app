@@ -1,5 +1,5 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://www.boredapi.com/"
+  to = "http://www.boredapi.com/:splat"
   status = 200
