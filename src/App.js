@@ -11,7 +11,7 @@ const users = ["fernando.doglio@gmail.com", "adam.sandler@fakeeamil.com", "thisi
 
 //...
 const tracker = new OpenReplay({
-  projectKey: "aQJ5u6DbFl4RhOJpBwzD"
+  projectKey: "ALGr6OX4AciTnIyeJZnY"
 });
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
