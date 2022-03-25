@@ -8,11 +8,11 @@ const getSomething = async (evt) => {
 
     const API_URL = new URL("http://www.boredapi.com/api/activity?")
     let getParams = {}
-    if(form.participants.value != '') {
+    if(form.participants.value !== '') {
       getParams.participants = form.participants.value
     }
 
-    if(form.priceRange.value != '') {
+    if(form.priceRange.value !== '') {
       let prices = form.priceRange.value.split("_")
       getParams.minprice = prices[0]
       getParams.maxprice = prices[1]
