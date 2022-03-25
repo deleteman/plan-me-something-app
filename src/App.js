@@ -5,6 +5,12 @@ import SearchForm from './components/SearchForm';
 import Suggestion from './components/Suggestion';
 import {useState} from 'react'
 
+import OpenReplay from '@openreplay/tracker';
+//...
+const tracker = new OpenReplay({
+  projectKey: "aQJ5u6DbFl4RhOJpBwzD"
+});
+tracker.start();
 
 function App() {
 
