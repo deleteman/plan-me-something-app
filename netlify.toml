@@ -1,0 +1,5 @@
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://www.boredapi.com/"
+  status = 200
