@@ -6,7 +6,7 @@ const getSomething = async (evt) => {
     evt.preventDefault()
     let form = evt.target
 
-    const API_URL = new URL("http://www.boredapi.com/api/activity?")
+    const API_URL = new URL("/api/activity?")
     let getParams = {}
     if(form.participants.value !== '') {
       getParams.participants = form.participants.value
