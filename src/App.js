@@ -17,7 +17,7 @@ const tracker = new OpenReplay({
 });
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
-tracker.use(trackerFetch({
+window.fetch = tracker.use(trackerFetch({
   replaceDefault: true
 }))
 tracker.start();
