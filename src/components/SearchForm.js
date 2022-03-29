@@ -1,7 +1,7 @@
 
 import { Container, Col, Form, Row, Button } from 'react-bootstrap';
 
-const SearchForm = ({setResult}) => {
+const SearchForm = ({setResult, fetcher}) => {
 const getSomething = async (evt) => {
     evt.preventDefault()
     let form = evt.target
@@ -18,7 +18,7 @@ const getSomething = async (evt) => {
       getParams.maxprice = prices[1]
     }
 
-    let results = await fetch(API_URL + new URLSearchParams(getParams), {
+    let results = await fetcher(API_URL + new URLSearchParams(getParams), {
         mode: 'no-cors'
     })
     setResult(await results.json())

@@ -17,9 +17,7 @@ const tracker = new OpenReplay({
 });
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
-window.fetch = tracker.use(trackerFetch({
-  replaceDefault: true
-}))
+const fetch = tracker.use(trackerFetch({}))
 tracker.start();
 
 function App() {
@@ -32,7 +30,7 @@ function App() {
         <h1>I'm bored!</h1>
         <h3>Find me something to do...</h3> 
       </header>
-      <SearchForm setResult={setActivity}></SearchForm>
+      <SearchForm setResult={setActivity} fetcher={fetch}></SearchForm>
       {activity && <Suggestion activity={activity} ></Suggestion>}
     </div>
   );
