@@ -6,6 +6,8 @@ import Suggestion from './components/Suggestion';
 import {useState} from 'react'
 
 import OpenReplay from '@openreplay/tracker';
+import trackerFetch from '@openreplay/tracker-fetch/cjs';
+
 
 const users = ["fernando.doglio@gmail.com", "adam.sandler@fakeeamil.com", "thisisatest@gmail.com", "tomholland@imspiderman.com"]
 
@@ -15,6 +17,9 @@ const tracker = new OpenReplay({
 });
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
+tracker.use(trackerFetch({
+  replaceDefault: true
+}))
 tracker.start();
 
 function App() {
