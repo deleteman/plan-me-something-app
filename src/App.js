@@ -17,7 +17,12 @@ const tracker = new OpenReplay({
 });
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
-const fetch = tracker.use(trackerFetch({}))
+const fetch = tracker.use(trackerFetch({
+  requestSanitizer: (req) => {
+    req.body.phonenumber = "XXXXXX"
+    return req
+  }
+}))
 tracker.start();
 
 function App() {
