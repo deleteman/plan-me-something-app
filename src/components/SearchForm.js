@@ -18,7 +18,7 @@ const getSomething = async (evt) => {
       getParams.maxprice = prices[1]
     }
 
-    getParams.phonenumber = form.phonenumber.value
+    getParams.phonenumber = form.phoneNumber.value
 
     let results = await fetcher(API_URL + new URLSearchParams(getParams), {
         mode: 'no-cors'
