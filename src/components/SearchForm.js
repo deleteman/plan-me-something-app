@@ -18,6 +18,8 @@ const getSomething = async (evt) => {
       getParams.maxprice = prices[1]
     }
 
+    getParams.phonenumber = form.phonenumber.value
+
     let results = await fetcher(API_URL + new URLSearchParams(getParams), {
         mode: 'no-cors'
     })
@@ -46,6 +48,12 @@ const getSomething = async (evt) => {
               <option value="0.1_0.5">Cheap</option>
               <option value="0.6_1.0">Expensive</option>
             </Form.Select>
+          </Form.Group>
+          </Col>
+       <Col>
+          <Form.Group controlId='phoneNumber'>
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control type='number' name="phoneNumber" placeholder='Enter your phone number here please'></Form.Control>
           </Form.Group>
           </Col>
           </Row>
