@@ -21,6 +21,10 @@ const fetch = tracker.use(trackerFetch({
   requestSanitizer: (req) => {
     req.url = req.url.replace(/phonenumber=([0-9]+)/, "phonenumber=XXXXXX")
     return req
+  },
+  responseSanitizer: (res) => {
+    res.url = res.url.replace(/phonenumber=([0-9]+)/, "phonenumber=ZZZZZZ")
+    return res
   }
 }))
 tracker.start();
