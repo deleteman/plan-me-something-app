@@ -19,7 +19,7 @@ let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
 const fetch = tracker.use(trackerFetch({
   requestSanitizer: (req) => {
-    req.body.phonenumber = "XXXXXX"
+    req.url = req.url.replace(/phonenumber=([0-9]+)/, "phonenumber=XXXXXX")
     return req
   }
 }))
