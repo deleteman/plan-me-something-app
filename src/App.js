@@ -18,13 +18,9 @@ const tracker = new OpenReplay({
 let userId  = users[Math.ceil(Math.random() * 3)]
 tracker.setUserID(userId);
 const fetch = tracker.use(trackerFetch({
-  requestSanitizer: (req) => {
-    req.url = req.url.replace(/phonenumber=([0-9]+)/, "phonenumber=XXXXXX")
-    return req
-  },
-  responseSanitizer: (res) => {
-    res.url = res.url.replace(/phonenumber=([0-9]+)/, "phonenumber=ZZZZZZ")
-    return res
+  sanitiser: (data) => {
+    data.url = data.url.replace(/phonenumber=([0-9]+)/, "phonenumber=XXXXXX")
+    return data
   }
 }))
 tracker.start();
