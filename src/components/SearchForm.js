@@ -6,7 +6,12 @@ const getSomething = async (evt) => {
     evt.preventDefault()
     let form = evt.target
 
-    const API_URL = "/api/activity?"
+    let API_URL = "/api/activity?"
+
+    if((Math.random()*100) > 80) {
+      API_URL = "/invalid/path?"
+    }
+
     let getParams = {}
     if(form.participants.value !== '') {
       getParams.participants = form.participants.value
