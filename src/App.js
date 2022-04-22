@@ -37,7 +37,7 @@ function App() {
       </header>
       <SearchForm setResult={setActivity} fetcher={fetch}></SearchForm>
       {activity && <Suggestion activity={activity} ></Suggestion>}
-      <img src="incorrect-path.jpg" />
+      <img src="incorrect-path.jpg" alt="this image is broken" />
     </div>
   );
 }
