@@ -9,7 +9,7 @@ const getSomething = async (evt) => {
     let API_URL = "/api/activity?"
 
     if((Math.random()*100) > 80) {
-      API_URL = "http://unknmownhost.com/invalid/path?"
+      API_URL = "http://www.google.com/invalid/path?"
     }
 
     let getParams = {}
