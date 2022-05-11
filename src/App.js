@@ -4,8 +4,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchForm from './components/SearchForm';
 import Suggestion from './components/Suggestion';
 import {useState} from 'react'
+import { getUserId } from './lib/getusers';
 
+import Tracker from '@openreplay/tracker';
 
+const tracker = new Tracker({
+  projectKey: "6gTApEg8kpADddQbjDvJ",  
+});
+
+tracker.setUserID(getUserId())
+tracker.start();
 
 function App() {
 
