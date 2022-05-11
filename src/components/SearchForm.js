@@ -8,9 +8,11 @@ const getSomething = async (evt) => {
 
     let API_URL = "/api/activity?"
 
+    /*
     if((Math.random()*100) > 80) {
       API_URL = "/invalid/path?"
     }
+    */
 
     let getParams = {}
     if(form.participants.value !== '') {
