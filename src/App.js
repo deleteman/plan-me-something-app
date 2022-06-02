@@ -12,7 +12,12 @@ import trackerFetch from '@openreplay/tracker-fetch'
 const tracker = new Tracker({
   projectKey: "kkS0AG81LDQZ5dGTnTGN",  
 });
-const fetch = tracker.use(trackerFetch({}))
+const fetch = tracker.use(trackerFetch({
+  sanitiser: (data) => {
+    data.url = data.url.replace(/phonenumber=([0-9]+)/, "phonenumber=XXXX")
+    return data
+  }
+}))
 tracker.start();
 
 function App() {
