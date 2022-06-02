@@ -7,9 +7,8 @@ import {useState} from 'react'
 
 
 import Tracker from '@openreplay/tracker';
-
 const tracker = new Tracker({
-  projectKey: "Gx8JkM6QrMwPTk1o5OF9",  
+  projectKey: "kkS0AG81LDQZ5dGTnTGN",  
 });
 tracker.start();
 
